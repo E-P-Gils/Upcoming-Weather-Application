@@ -1,6 +1,7 @@
 var submitButton = document.getElementById("submit");
 var weatherReport = document.getElementById('weather');
 var formStop = document.getElementById('form');
+var cityData = JSON.parse(localStorage.getItem('cityData')) || [];
 submitButton.addEventListener('click', () => {
     formStop.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -27,6 +28,21 @@ submitButton.addEventListener('click', () => {
                             var temp = (temperature - 273.15) * 9/5 + 32;
                             var city = citySearch.value;
                             weatherReport.textContent = `The temperature in ${city} is ${temp} degrees!`
+
+                            var cityObj = {city: city, temp :temp};
+                            cityData.push(cityObj);
+                            localStorage.setItem('cityData', JSON.stringify(cityData));
+
+                            var cityList = document.getElementById("city-list");
+                            cityList.innerHTML = '';
+                            for (var i=0; i < cityData.length; i++){
+                                var cityEl = document.createElement('li');
+                                var tempEl = document.createElement('span'); 
+                                cityEl.textContent = cityData[i].city + ': ';
+                                tempEl.textContent = cityData[i].temp + ' degrees';
+                                cityEl.appendChild(tempEl);
+                                cityList.appendChild(cityEl);
+                            }
                         })
                 })
                 .catch(function (error) {
