@@ -1,8 +1,8 @@
 
   
- ![License](https://img.shields.io/badge/License-c-blue.svg)
+ ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-  # code
+  # Real Time Weather Application
 
   ## Table of Contents 
   1. [Description](#description)
@@ -13,25 +13,25 @@
 
   ## Description 
 
-  c
+  In this project we practice fetching and acting on data from an external API and using local storage. My application shows real time weather information that's being retrieved from an API, and stores user's searches in local storage. 
 
   ## Installation 
 
-  c
+  You can use the app in browser!
 
   ## Usage
 
-  c
+  You can search a city to see it's weather information.
 
   ## Contributors 
-  c
+  N/A
 
   ## Tests
 
-  c
+  N/A
 
   ## Questions 
 
-  c
-  Github Profile Link: https://github.com/
+  N/A
+  Github Profile Link: https://github.com/E-P-Gils
   
